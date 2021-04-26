@@ -1,63 +1,45 @@
-//todo 추가
-var btnAddEl =document.getElementById('btnAdd');
+//투두추가
 
-btnAddEl.addEventListener('click', function(){
-    addTodo();
-});
+let addTodoBtn = document.getElementById('btnAdd');
+
+addTodoBtn.addEventListener('click', addTodo);
 
 function addTodo(){
 
-    var todotext =document.getElementById('todotext').value;
-    var textnode = document.createTextNode(todotext);
-    //console.log(textnode);
+    let todotext =document.getElementById('todotext').value;
+    let textnode = document.createTextNode(todotext);
 
-    var tr = document.createElement('tr');
-    var td01 = document.createElement('td');
-    var input = document.createElement('input');
+    let tr = document.createElement('tr');
+    let trCheck = document.createElement('td');
+    let input = document.createElement('input');
     input.setAttribute('type', 'checkbox');
     input.setAttribute('class', 'btn-chk');
-    td01.appendChild(input);
+    trCheck.appendChild(input);
 
-    var td02 = document.createElement('td');
-    td02.appendChild(textnode);
+    let trText = document.createElement('td');
+    trText.appendChild(textnode);
 
-    tr.appendChild(td01);
-    tr.appendChild(td02);
+    tr.appendChild(trCheck);
+    tr.appendChild(trText);
 
-
-    var tbody = document.getElementById('listBody');
+    let tbody = document.getElementById('listBody');
     tbody.appendChild(tr);
-    document.getElementById('todotext').value = ''; //input text 초기화
-
-    // console.log(tbody);
 }
 
-
 //선택 완료
-var DeleteSel = document.getElementById('DeleteSel');
-var DelList = new Array();
+let selCompletedBtn = document.getElementById('DeleteSel');
 
+selCompletedBtn.addEventListener('click',  delTodo)
 
-DeleteSel.addEventListener('click', function(){
-
-    delTodo();
-
-});
-
-//선택 완료
 function delTodo(){
-    var checkbox = document.querySelectorAll('.btn-chk');
-    //onsole.log(checkbox.length);
+    let checkbox = document.querySelectorAll('.btn-chk');
 
-    for(var i=0; i<checkbox.length; i++){
-        var item = checkbox.item(i);
-        //console.log(item);
-        var checkResult = item.checked;
-        //console.log(checkResult);
+    for(let i=0; i<checkbox.length; i++){
+        let item = checkbox.item(i);
+        let checkResult = item.checked;
 
         if(checkResult){
-            var parent = item.parentNode.parentNode;
-            //console.log(parent);
+            let parent = item.parentNode.parentNode;
             parent.parentNode.removeChild(parent);
             addDoneList(parent);
         }
@@ -66,24 +48,21 @@ function delTodo(){
 
 //donelist에 추가
 function addDoneList(item){
-    var doneList = document.getElementById('done-listBody');
+    let doneList = document.getElementById('done-listBody');
     item.firstChild.firstChild.checked=false;
     doneList.appendChild(item);
 }
 
 
 //전체 완료
-var delAllBtn = document.getElementById('btnDelAll');
-var tbody = document.getElementById('listBody');
-var trList = tbody.children;
+let allCompletedBtn = document.getElementById('btnDelAll');
+let trList = document.getElementById('listBody').children;
 
-delAllBtn.addEventListener('click', function(){
-    console.log(trList.length);
-
-    for(var i=0; i<trList.length; i++){
-        var trOne = trList[i];
-        //console.log(trOne);
-        trOne.parentNode.removeChild(trOne);
-        addDoneList(trOne);
+allCompletedBtn.addEventListener('click', function(){
+    for(let i=0; i<trList.length; i++) {
+        let compTr = trList[i];
+        trList[i].remove();
+        i--;
+        addDoneList(compTr)
     }
 })
