@@ -6,12 +6,13 @@ addTodoBtn.addEventListener('click', addTodo);
 
 function addTodo(){
 
-    let todotext =document.getElementById('todotext').value;
-    let textnode = document.createTextNode(todotext);
+    let todoInput = document.getElementById('todotext');
+    let textnode = document.createTextNode(todoInput.value);
 
     let tr = document.createElement('tr');
     let trCheck = document.createElement('td');
     let input = document.createElement('input');
+
     input.setAttribute('type', 'checkbox');
     input.setAttribute('class', 'btn-chk');
     trCheck.appendChild(input);
@@ -24,6 +25,8 @@ function addTodo(){
 
     let tbody = document.getElementById('listBody');
     tbody.appendChild(tr);
+    todoInput.value = "";
+
 }
 
 //선택 완료
