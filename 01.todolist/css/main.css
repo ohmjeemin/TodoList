@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/* 기본색 */
+:root {
+    --main-color: #A7BBC7;
+    --list-color: #BF6A7A;
+    --point-color: #DA7F8F;
+    --board-color: #FAF3F3;
+    --disabled-color: #D1D1D2;
+}
+
+/* 기본 설정: 페이지 전체*/
+html,
+body {
+    font-family:'맑은 고딕','Apple SD Gothic Neo','sans-serif';
+    background-color:var(--main-color)
+}
+
+.month {
+    font-size:20px;
+    font-weight:bold;
+    color:#bcbcbc
+}
+
+.day {
+    font-size:35px;
+    font-weight:bolder
+}
+
+/* 투두 보드 */
+.board {
+    width:380px;
+    height:550px;
+    background-color:var(--board-color);
+    border-radius:30px;
+    margin:100px auto;
+}
+
+.wrap {
+    padding:46px;
+    height:calc(100% - 92px)
+}
+
+.progress-bar {
+    width:100%;
+    height:8px;
+    background-color:#DA7F8F;
+    border-radius:20px;
+    margin-top:15px
+}
+
+.list-area {
+    margin-top:40px
+}
+
+.list-area > .list {
+    font-size:12px;
+    padding:5px 12px;
+    border-radius:10px;
+    background-color:#E1E5EA;
+    margin-bottom:10px
+}
+
+.input-area {
+}
+
+.input-area .text-box {
+    width:80%;height:23px;border:1px solid #e5e5e5;border-radius:10px;box-sizing:border-box;font-size:12px;background-color:#ffffff
+}
+
+@media (min-width: 768px) {
+
+}
