@@ -29,16 +29,18 @@ body {
 
 /* 투두 보드 */
 .board {
-    width:380px;
-    height:550px;
+    width:300px;
+    height:500px;
     background-color:var(--board-color);
     border-radius:30px;
     margin:10% auto;
+    padding:46px;
 }
 
 .wrap {
-    padding:46px;
-    height:calc(100% - 92px)
+    width:100%;
+    height:100%;
+    position:relative;
 }
 
 .progress-bar {
@@ -62,12 +64,33 @@ body {
 }
 
 .input-area {
+    width:100%;
+    position:absolute;
+    bottom:0;
+    display:flex
 }
 
 .input-area .text-box {
-    width:80%;height:23px;border:1px solid #e5e5e5;border-radius:10px;box-sizing:border-box;font-size:12px;background-color:#ffffff
+    width:90%;
+    height:23px;
+    border:1px solid #e5e5e5;
+    border-radius:10px;
+    box-sizing:border-box;
+    font-size:12px;
+    background-color:#ffffff
 }
 
-@media (min-width: 768px) {
+.input-area .add-btn {
+    width:15px;
+    height:15px;
+    display:inline-block;
+    background-image:url('../image/ic-add.svg');
+    background-size:15px 15px;
+    background-repeat:no-repeat;
+    transform:translateY(3px);
+    margin-left:10px
+}
+/* 768 미만일 때 */
+@media (max-width: 768px) {
 
 }
