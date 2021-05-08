@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div class="todo">
+    <div class="list-box">
+        <h1>To Do List</h1>
+        <div class="write-box">
+            <input type="text" id ="todotext" class="text-basic" />
+            <div id="btnAdd">add</div>
+        </div>
+        <table class="table list-table">
+            <colgroup>
+                <col width="10%">
+                <col width="90%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>check</th>
+                    <th>To do List</th>
+                </tr>
+            </thead>
+            <tbody id="listBody">
+            </tbody>
+        </table>
+        <div class="btn-area">
+            <button type="button" id="DeleteSel">선택 완료</button>
+            <button type="button" id="btnDelAll">전체 완료</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

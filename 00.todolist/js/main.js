@@ -1,29 +1,34 @@
 //투두추가
 
-let addTodoBtn = document.getElementById('btnAdd');
+const addTodoBtn = document.getElementById('btnAdd');
+
 
 addTodoBtn.addEventListener('click', addTodo);
 
+// function createEl(el){
+//    return document.createElement(el);
+// }
+
+
 function addTodo(){
 
-    let todoInput = document.getElementById('todotext');
-    let textnode = document.createTextNode(todoInput.value);
-
-    let tr = document.createElement('tr');
-    let trCheck = document.createElement('td');
-    let input = document.createElement('input');
+    const todoInput = document.getElementById('todotext');
+    const textnode = document.createTextNode(todoInput.value);
+    const tr = document.createElement('tr');
+    const trCheck = document.createElement('td');
+    const input = document.createElement('input');
 
     input.setAttribute('type', 'checkbox');
     input.setAttribute('class', 'btn-chk');
     trCheck.appendChild(input);
 
-    let trText = document.createElement('td');
+    const trText = document.createElement('td');
     trText.appendChild(textnode);
 
     tr.appendChild(trCheck);
     tr.appendChild(trText);
 
-    let tbody = document.getElementById('listBody');
+    const tbody = document.getElementById('listBody');
     tbody.appendChild(tr);
     todoInput.value = "";
 
