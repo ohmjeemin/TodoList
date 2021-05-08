@@ -8,12 +8,11 @@
     --board-color: #FAF3F3;
     --disabled-color: #D1D1D2;
 }
-
 /* 기본 설정: 페이지 전체*/
 html,
 body {
-    font-family:'맑은 고딕','Apple SD Gothic Neo','sans-serif';
-    background-color:var(--main-color)
+    background-color:var(--main-color);
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .month {
@@ -55,13 +54,37 @@ body {
     margin-top:40px
 }
 
-.list-area > .list {
+.list-area .list {
     font-size:12px;
     padding:5px 12px;
     border-radius:10px;
     background-color:#E1E5EA;
-    margin-bottom:13px
+    margin-bottom:13px;
+    display:flex;
 }
+
+.list-area .list .checkbox {
+    margin-right:10px;
+    width:15px;
+    height:15px;
+    background-color:#eeeeee
+}
+
+.list-area .list .checkbox .material-icons.check
+{
+    font-size:15px;
+    color:#A7BBC7
+}
+
+.list-area .list .material-icons.del-btn
+{
+    font-size:15px;
+    color:#A7BBC7;
+    position:absolute;
+    right:0;
+    margin-right:10px;
+}
+
 
 .input-area {
     width:100%;
@@ -71,7 +94,7 @@ body {
 }
 
 .input-area .text-box {
-    width:90%;
+    width:95%;
     height:23px;
     border:1px solid #e5e5e5;
     border-radius:10px;
@@ -80,16 +103,13 @@ body {
     background-color:#ffffff
 }
 
-.input-area .add-btn {
-    width:15px;
-    height:15px;
-    display:inline-block;
-    background-image:url('../image/ic-add.svg');
-    background-size:15px 15px;
-    background-repeat:no-repeat;
-    transform:translateY(3px);
+.input-area .material-icons.add-btn {
+    font-size:15px;
+    color:#A7BBC7;
+    line-height:23px;
     margin-left:10px
 }
+
 /* 768 미만일 때 */
 @media (max-width: 768px) {
 

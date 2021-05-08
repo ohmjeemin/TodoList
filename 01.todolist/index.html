@@ -6,6 +6,9 @@
     <title>todo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="board">
@@ -17,18 +20,22 @@
             <div class="progress-bar"></div>
             <section class="list-area">
                 <div class="list">
+                    <div class="checkbox"><span class="material-icons check">done</span></div>
                     <span>장보기</span>
+                    <span class="material-icons del-btn" style="">cancel</span>
                 </div>
                 <div class="list">
+                    <div class="checkbox"><span class="material-icons check">done</span></div>
                     <span>재밌게 놀기</span>
                 </div>
                 <div class="list">
+                    <div class="checkbox"><span class="material-icons check">done</span></div>
                     <span>알고리즘 공부하기</span>
                 </div>
             </section>
             <section class="input-area">
                 <input type="text" class="text-box">
-                <div class="add-btn"></div>
+                <span class="material-icons add-btn" style="">add_circle</span>
             </section>
         </div>
     </div>
