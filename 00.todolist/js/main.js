@@ -39,6 +39,8 @@ let selCompletedBtn = document.getElementById('DeleteSel');
 
 selCompletedBtn.addEventListener('click',  delTodo)
 
+function addClass(element, className) { element.className += " " + className; };
+
 function delTodo(){
     let checkbox = document.querySelectorAll('.btn-chk');
 
@@ -48,8 +50,9 @@ function delTodo(){
 
         if(checkResult){
             let parent = item.parentNode.parentNode;
-            parent.parentNode.removeChild(parent);
-            addDoneList(parent);
+           // parent.parentNode.removeChild(parent);
+            addClass(parent, "done");
+           // addDoneList(parent);
         }
     }
 }

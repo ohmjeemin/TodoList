@@ -79,6 +79,13 @@ td {
     font-size: 20px;
 }
 
+.done {
+    background-color:lightgray;
+}
+.done > td {
+    color: darkgray;
+}
+
 th {
     background: #f5c2b2;
 }
