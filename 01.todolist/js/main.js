@@ -1,6 +1,6 @@
-const mm = moment().format("MMM");
-const dd = moment().format("DD");
 
-document.getElementById("month").textContent = mm;
+document.getElementById("month").textContent
+    = moment().format("MMM");
 
-document.getElementById("day").textContent = dd;
+document.getElementById("day").textContent
+    = moment().format("DD");
