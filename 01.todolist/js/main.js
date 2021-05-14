@@ -7,9 +7,12 @@ document.getElementById("day").textContent
 
 
 document.getElementById("add-btn")
-    .addEventListener("click", function(){
-    const text = document.getElementById("textBox").value;
-    addToDo(text);
+    .addEventListener("click", (event) =>{
+
+        event.preventDefault();
+        const text = document.getElementById("textBox").value;
+        if(text.length < 1) return false;
+        addToDo(text);
 })
 
 const addToDo = text => {
@@ -27,10 +30,22 @@ const addToDo = text => {
 
     li.className = "list";
     div.className = "checkbox";
+    div.setAttribute("name", "checkbox");
+    
     checkBox.classList.add("material-icons", "check");
     delBtn.classList.add("material-icons", "del-btn");
     todo.innerText = text;
 
     listArea.appendChild(li);
     document.getElementById("textBox").value = "";
+
+    div.addEventListener("click", () => {
+        if(li.className==="list"){
+            li.classList.add("list", "done");
+            todo.className = "done-task";
+        }else {
+            li.classList.remove("done");
+            todo.className = "";
+        }
+    })
 }

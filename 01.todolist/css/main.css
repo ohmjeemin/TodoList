@@ -66,6 +66,15 @@ body {
     display:flex;
 }
 
+.list-area .list.done {
+    font-size:12px;
+    padding:5px 12px;
+    border-radius:10px;
+    background-color:#D1D1D2;
+    margin-bottom:13px;
+    display:flex;
+}
+
 .list-area .list .checkbox {
     margin-right:10px;
     width:15px;
@@ -108,12 +117,17 @@ body {
     padding-left:7px;
 }
 
+.done-task {
+    text-decoration-line: line-through;
+}
+
 .input-area .material-icons.add-btn {
     font-size:15px;
     color:#A7BBC7;
     line-height:23px;
     margin-left:10px
 }
+
 
 /* 768 미만일 때 */
 @media (max-width: 768px) {
