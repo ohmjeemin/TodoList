@@ -79,13 +79,13 @@ body {
     margin-right:10px;
     width:15px;
     height:15px;
-    background-color:#eeeeee
 }
 
-.list-area .list .checkbox .material-icons.check
+.list-area .list .checkbox .material-icons.unchecked
 {
     font-size:15px;
-    color:#A7BBC7
+    color:#A7BBC7;
+    cursor:pointer;
 }
 
 .list-area .list .material-icons.del-btn
@@ -117,7 +117,7 @@ body {
     padding-left:7px;
 }
 
-.done-task {
+.task.done {
     text-decoration-line: line-through;
 }
 
@@ -125,7 +125,8 @@ body {
     font-size:15px;
     color:#A7BBC7;
     line-height:23px;
-    margin-left:10px
+    margin-left:10px;
+    cursor:pointer;
 }
 
 

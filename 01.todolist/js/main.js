@@ -14,9 +14,26 @@ document.getElementById("add-btn")
         addToDo(text);
 })
 
-const addToDo = text => {
+const doneToDo = e => {
+    const liSelected = e.target.closest("li");
+    if(!liSelected) return;
+    const taskSelected = liSelected.querySelector(".task");
+    const uncheckedBox = liSelected.querySelector(".material-icons.unchecked");
+    if(liSelected.className==="list"){
+        liSelected.classList.add("done");
+        taskSelected.classList.add("done");
+        uncheckedBox.innerHTML = "check_circle_outline"
+    }else {
+        liSelected.classList.remove("done");
+        taskSelected.classList.remove("done");
+        uncheckedBox.innerHTML="radio_button_unchecked";
+    }
+}
 
-    const listArea = document.getElementById("listArea");
+const listArea = document.getElementById("listArea");
+listArea.addEventListener("click", doneToDo)
+
+const makeToDoItem = text => {
     const li = document.createElement("li");
     const div = document.createElement("div");
     const checkBox = document.createElement("span");
@@ -30,23 +47,22 @@ const addToDo = text => {
     li.className = "list";
     div.className = "checkbox";
     div.setAttribute("name", "checkbox");
-    
-    checkBox.classList.add("material-icons", "check");
-    checkBox.innerText="done";
+
+    checkBox.classList.add("material-icons", "unchecked");
+    checkBox.innerText="radio_button_unchecked";
     delBtn.classList.add("material-icons", "del-btn");
     delBtn.innerText="cancel";
     todo.innerText = text;
+    todo.className = "task"
 
-    listArea.appendChild(li);
-    document.getElementById("textBox").value = "";
-
-    div.addEventListener("click", () => {
-        if(li.className==="list"){
-            li.classList.add("list", "done");
-            todo.className = "done-task";
-        }else {
-            li.classList.remove("done");
-            todo.className = "";
-        }
-    })
+    return li;
 }
+
+
+const addToDo = text => {
+    const listArea = document.getElementById("listArea");
+    const el = makeToDoItem(text);
+    listArea.appendChild(el);
+    document.getElementById("textBox").value = "";
+}
+
