@@ -8,7 +8,6 @@ document.getElementById("day").textContent
 
 document.getElementById("add-btn")
     .addEventListener("click", (event) =>{
-
         event.preventDefault();
         const text = document.getElementById("textBox").value;
         if(text.length < 1) return false;
@@ -33,7 +32,9 @@ const addToDo = text => {
     div.setAttribute("name", "checkbox");
     
     checkBox.classList.add("material-icons", "check");
+    checkBox.innerText="done";
     delBtn.classList.add("material-icons", "del-btn");
+    delBtn.innerText="cancel";
     todo.innerText = text;
 
     listArea.appendChild(li);
