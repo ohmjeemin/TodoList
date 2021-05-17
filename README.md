@@ -1,5 +1,7 @@
 # vanillaToDoList
 
+[투두앱 링크] (https://zealous-liskov-9a341d.netlify.app/)
+
 ### 1. 디자인
 [figma로 보기](https://www.figma.com/file/UWosTHRLB7efj3iRSHn0k5/TODO?node-id=0%3A1)
 <br>
