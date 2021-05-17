@@ -1,4 +1,4 @@
-# vanillaToDoList
+# ToDoList
 
 [투두앱 링크] (https://zealous-liskov-9a341d.netlify.app/)
 
