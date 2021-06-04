@@ -9,14 +9,28 @@ const Data = {
     localstorage["ojmTodo"] = JSON.stringify(list);
   }
   addGroup(title){
-    this.list.push(new TaskGroup(title));
+    const group = new TaskGroup(title);
+    this.list.push(group);
+    return group;
   }
   addTask(group, title){
-    if(this.list.indexOf(group) == -1) throw "invalid group";
-    group.add(new Task(title));
+    if(list.indexOf(group) == -1) throw "invalid group";
+    const task = new Task(title);
+    group.add(task);
+    return task;
   }
   get list(){
     return [...list];
+  }
+  prev(group){
+    const idx = list.indexOf(group);
+    if(idx == -1) throw "invalid group";
+    return idx > 0 ? list[idx - 1] : null;
+  }
+  next(group){
+    const idx = list.indexOf(group);
+    if(idx == -1) throw "invalid group";
+    return idx < list.length - 1 ? list[idx + 1] : null;
   }
 };
 const TaskGroup = class{
