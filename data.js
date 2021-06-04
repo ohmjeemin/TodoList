@@ -79,4 +79,4 @@ const Task = class{
     return `{"title":"${this.#title}", "isCompleted":${this.#isCompleted}}`
   }
 }
-export {list}
+export {Data}
