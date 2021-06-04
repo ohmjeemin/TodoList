@@ -11,12 +11,14 @@ const Data = {
   addGroup(title){
     const group = new TaskGroup(title);
     this.list.push(group);
+    this.save();
     return group;
   }
   addTask(group, title){
     if(list.indexOf(group) == -1) throw "invalid group";
     const task = new Task(title);
     group.add(task);
+    this.save();
     return task;
   }
   get list(){
@@ -46,6 +48,7 @@ const TaskGroup = class{
   }
   set title(v){
     this.#title = v;
+    Data.save();
   }
   get title(){
     return this.#title;
@@ -55,9 +58,11 @@ const TaskGroup = class{
   }
   add(task){
     this.#list.add(task);
+    Data.save();
   }
   remove(task){
     this.#list.delete(task);
+    Data.save();
   }
   toJSON(){
     return `{
@@ -79,6 +84,7 @@ const Task = class{
   }
   set title(v){
     this.#title = v;
+    Data.save();
   }
   get title(){
     return this.#title;
@@ -88,6 +94,7 @@ const Task = class{
   }
   toggle(){
     this.#isCompleted = !this.#isCompleted;
+    Data.save();
   }
   toJSON(){
     return `{"title":"${this.#title}", "isCompleted":${this.#isCompleted}}`
