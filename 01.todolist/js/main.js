@@ -19,6 +19,14 @@ document.getElementById("add-btn")
         addToDo(text);
 })
 
+const enterkey = function() {
+    if(window.event.keyCode === 13) {
+        const text = document.getElementById("textBox").value;
+        if(text.length < 1) return false;
+        addToDo(text);
+    }
+}
+
 // 투두 블럭 만들기
 const makeToDoItem = text => {
     const li = document.createElement("li");

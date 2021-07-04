@@ -37,6 +37,7 @@ body {
     border-radius:30px;
     margin:10% auto;
     padding:46px;
+    overflow-y:auto;
 }
 
 .wrap {
