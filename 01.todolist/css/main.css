@@ -45,12 +45,22 @@ body {
     position:relative;
 }
 
-.progress-bar {
-    width:100%;
+
+.progress-bar.done {
+    width:0%;
     height:8px;
     background-color:#DA7F8F;
     border-radius:20px;
-    margin-top:15px
+    margin-top:15px;
+}
+/*animation: progressbar 2s ease-out;*/
+
+.progress-bar {
+    width:100%;
+    height:8px;
+    background-color: #d2c0c4;
+    border-radius:20px;
+    margin-top:15px;
 }
 
 .list-area {
@@ -129,6 +139,14 @@ body {
     cursor:pointer;
 }
 
+@keyframes progressbar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width:33%;
+    }
+}
 
 /* 768 미만일 때 */
 @media (max-width: 768px) {
