@@ -8,14 +8,7 @@
 ![image](https://user-images.githubusercontent.com/44112843/117540394-2f25b180-b04a-11eb-9577-f19c6e07ad5b.png)
 
 ### 2. 색상
-- #A7BBC7
-![image](https://user-images.githubusercontent.com/44112843/124387018-f50a2080-dd17-11eb-9acb-eb24f884f0c1.png)
-- #E1E5EA
-![image](https://user-images.githubusercontent.com/44112843/124387089-24209200-dd18-11eb-948b-e576907d4b0d.png)
-- #DA7F8F
-![image](https://user-images.githubusercontent.com/44112843/124387178-75308600-dd18-11eb-9ae0-b5c07e3d7a52.png)
-
-
+![todocolor](https://user-images.githubusercontent.com/44112843/124387492-e290e680-dd19-11eb-89f1-51f0435a7a8e.png)
 
 ### 3. 기능요구사항
 - 오늘 날짜를 상단에서 확인
